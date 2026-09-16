@@ -5,30 +5,35 @@ const Counter = () => {
   const [count, setCount] = useState(0);
   return (
     // Container
-    <div className="shadow-md bg-[#F8FAFC] h-75 w-62.5 flex flex-col justify-evenly items-center rounded-2xl">
+    <div className="shadow-md bg-[#F8FAFC] h-75 w-62.5 grid place-items-center rounded-2xl">
       {/* Title */}
-      <h1 className="text-2xl">Counter App</h1>
+      <h1 className="text-2xl font-bold">Counter App</h1>
       {/* Count */}
-      <p className="text-7xl font-bold text-gray-800 bg-red-400 shadow-2xs rounded-[50%]">{count}</p>
+      <p
+        className={`px-3 pb-1 text-center text-7xl font-bold text-gray-800 bg-white shadow-2xs rounded-4xl
+          ${count < 0 ? "text-red-600" : "text-black" && count > 0 ? "text-green-600" : "text-black"}`}
+      >
+        {count}
+      </p>
       {/* Button Area */}
-      <div className="flex justify-center gap-2 bg-amber-200 w-full">
+      <div className="flex justify-center items-center gap-0.5 w-full">
         {/* Minus Button */}
         <button
-          className="bg-[#DC2626] hover:bg-[#B91C1C]"
+          className="bg-red-600 text-white hover:bg-red-700 p-2 rounded-s-2xl cursor-pointer"
           onClick={() => setCount(count - 1)}
         >
           <Minus size={20} />
         </button>
         {/* Reset Button */}
         <button
-          className="bg-[#EEF2FF] hover:bg-[#E0E7FF]"
+          className="h-9 bg-slate-200 px-3 text-slate-800 hover:bg-slate-300 font-medium cursor-pointer"
           onClick={() => setCount(0)}
         >
           reset
         </button>
         {/* Plus Button */}
         <button
-          className="bg-[#16A34A] hover:bg-[#15803D] text-4xl"
+          className="bg-green-600 text-white hover:bg-green-700 p-2 rounded-e-2xl cursor-pointer"
           onClick={() => setCount(count + 1)}
         >
           <Plus size={20} />
