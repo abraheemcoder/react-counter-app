@@ -1,7 +1,10 @@
-import React from "react";
 import Counter from "./components/Counter";
 const App = () => {
-  return <Counter />;
+  return (
+    <div className="h-screen grid place-items-center">
+      <Counter />;
+    </div>
+  );
 };
 
 export default App;
